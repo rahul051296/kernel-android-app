@@ -7,8 +7,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        >
+        android:id="@+id/cards"
+                >
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="180dp"
@@ -17,7 +17,7 @@
             android:clickable="false"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_alignParentTop="true"
-            tools:src="@drawable/background2"/>
+            tools:src="@drawable/background_cse"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

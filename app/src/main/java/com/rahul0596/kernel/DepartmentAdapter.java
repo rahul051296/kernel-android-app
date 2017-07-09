@@ -1,40 +1,76 @@
 package com.rahul0596.kernel;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 
-public class DepartmentAdapter extends ArrayAdapter<Department>{
+public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentHolder>{
 
-    public DepartmentAdapter(Context context, ArrayList<Department> dept)
+    Context context;
+    private ArrayList<Department> deptList = new ArrayList<Department>();
+    public DepartmentAdapter(Context context, ArrayList<Department> deptList)
     {
-       super(context, 0 ,dept);
+        this.context = context;
+        this.deptList = deptList;
+        setHasStableIds(true);
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
-        listItemView = LayoutInflater.from(getContext()).inflate(R.layout.department_list, parent, false);
-        Department dept = getItem ( position );
+    public DepartmentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        TextView mtextView = (TextView) listItemView.findViewById ( R.id.name );
-        mtextView.setText ( dept.getDepName () );
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.department_list,null);
+        DepartmentHolder departmentHolder = new DepartmentHolder(view, context);
+
+        return departmentHolder;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    } @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
 
-        ImageView mImageView = (ImageView) listItemView.findViewById(R.id.background_image);
-        mImageView.setImageResource(dept.getImage());
+    @Override
+    public void onBindViewHolder(DepartmentHolder holder, final int position) {
 
-        return listItemView;
-     }
+        final Department dept = deptList.get(position);
+
+        holder.textView.setText(dept.getDepName());
+        Picasso.with(context)
+                .load(dept.getImage())
+                .config(Bitmap.Config.RGB_565)
+                .into(holder.imageView);
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ScrollingActivity.class);
+                intent.putExtra("image", dept.getImage());
+                intent.putExtra("deptName",dept.getDepName());
+                context.startActivity(intent);
+            }
+        });
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return deptList.size();
+    }
 }

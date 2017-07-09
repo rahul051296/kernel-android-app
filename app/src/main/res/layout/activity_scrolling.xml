@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="220dp"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:id="@+id/scroll_background"
-                android:src="@drawable/background1"/>
+                android:src="@drawable/background_cse"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -47,6 +47,7 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:tint="#fff"
+        app:srcCompat="@drawable/register" />
 
 </android.support.design.widget.CoordinatorLayout>

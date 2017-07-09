@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.rahul0596.kernel.ScrollingActivity">
+    >
     <item
         android:id="@+id/action_settings"
-        android:icon="@drawable/ic_public_black_24px"
+        android:icon="@drawable/ic_public_white_24dp"
         android:title="@string/action_settings"
         app:showAsAction="always" />
 </menu>

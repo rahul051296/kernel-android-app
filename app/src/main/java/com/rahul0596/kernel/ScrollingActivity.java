@@ -19,13 +19,18 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         CollapsingToolbarLayout toolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+
         Bundle bundle = getIntent().getExtras();
+
         img = bundle.getInt("image");
         depName = bundle.getString("deptName");
         scrollImageView = (ImageView) findViewById(R.id.scroll_background);
         scrollImageView.setImageResource(img);
+
         toolbarLayout.setTitle(depName);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
