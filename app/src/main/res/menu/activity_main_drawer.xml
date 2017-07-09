@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:title="Communicate">
+    <item android:title="Info">
         <menu>
             <item
                 android:id="@+id/about"

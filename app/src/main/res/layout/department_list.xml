@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cards"
-                >
+        >
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="180dp"
@@ -17,7 +17,9 @@
             android:clickable="false"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_alignParentTop="true"
-            tools:src="@drawable/background_cse"/>
+            tools:src="@drawable/background_it"/>
+
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,25 +37,57 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/normalText"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/name"
                 android:paddingRight="5dp"
+                android:layout_marginTop="8dp"
                 android:paddingLeft="5dp"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp"
                 android:layout_centerInParent="true"
                 android:textColor="#FFF"
-                android:id="@+id/date"
+                android:id="@+id/status"
                 android:textStyle="bold"
                 android:background="@drawable/text_background"
                 android:fontFamily="sans-serif-condensed"
                 android:textAlignment="center"
                 android:text="KERNEL"/>
+            <LinearLayout
+                android:layout_below="@+id/status"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    >
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_event_white_24px"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/date"
+                        android:textColor="@color/normalText"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textAllCaps="true"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=" Sept 9, 2017"
+                        />
+                </LinearLayout>
 
+
+            </LinearLayout>
         </RelativeLayout>
 
 

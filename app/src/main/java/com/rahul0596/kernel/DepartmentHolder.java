@@ -12,14 +12,13 @@ import android.widget.TextView;
 
 public class DepartmentHolder extends RecyclerView.ViewHolder {
     ImageView imageView;
-    TextView textView, subTextView;
-    RelativeLayout relativeLayout;
+    TextView textView,dateView;
     Animation fadeIn;
     public DepartmentHolder(View itemView, Context context) {
         super(itemView);
         fadeIn = AnimationUtils.loadAnimation(context,R.anim.fade_in);
         imageView = itemView.findViewById(R.id.background_image);
         textView = itemView.findViewById(R.id.name);
-        subTextView = itemView.findViewById(R.id.date);
+        dateView = itemView.findViewById(R.id.date);
     }
 }

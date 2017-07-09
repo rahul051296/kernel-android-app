@@ -51,6 +51,7 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentHolder>{
         final Department dept = deptList.get(position);
 
         holder.textView.setText(dept.getDepName());
+        holder.dateView.setText(dept.getDate());
         Picasso.with(context)
                 .load(dept.getImage())
                 .config(Bitmap.Config.RGB_565)

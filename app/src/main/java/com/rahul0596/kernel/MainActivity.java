@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 RecyclerView recyclerView;
+    String date1 = " Sept 9, 2017";
+    String date2 = " Sept 23, 2017";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +32,18 @@ RecyclerView recyclerView;
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         final ArrayList<Department> department = new ArrayList<Department> ();
-        department.add(new Department("Computer Science & Engineering",R.drawable.background_it));
-        department.add(new Department("Electronics & Electrical Engineering",R.drawable.background_eee));
-        department.add(new Department("Mechanical Engineering",R.drawable.background_mech));
-        department.add(new Department("Electronics & Communication Engineering",R.drawable.background_ece));
-        department.add(new Department("Information Technology",R.drawable.background_cse));
-        department.add(new Department("BioTechnology",R.drawable.background_biotech));
-        department.add(new Department("Chemical Engineering",R.drawable.background_chemical));
-        department.add(new Department("Civil Engineering",R.drawable.background_civil));
-        department.add(new Department("Electronics & Instrumentation Engineering",R.drawable.background_eie));
-        department.add(new Department("Instrumentation and Control Engineering",R.drawable.background_ice));
-        department.add(new Department("Master of Business Administration",R.drawable.background_mba));
-        department.add(new Department("Master of Computer Application",R.drawable.background_mca));
+        department.add(new Department("Computer Science & Engineering",R.drawable.background_it, date1));
+        department.add(new Department("Electronics & Electrical Engineering",R.drawable.background_eee, date2));
+        department.add(new Department("Mechanical Engineering",R.drawable.background_mech, date1));
+        department.add(new Department("Electronics & Communication Engineering",R.drawable.background_ece, date1));
+        department.add(new Department("Information Technology",R.drawable.background_cse,date2));
+        department.add(new Department("BioTechnology",R.drawable.background_biotech,date2));
+        department.add(new Department("Chemical Engineering",R.drawable.background_chemical,date1));
+        department.add(new Department("Civil Engineering",R.drawable.background_civil,date2));
+        department.add(new Department("Electronics & Instrumentation Engineering",R.drawable.background_eie,date2));
+        department.add(new Department("Instrumentation and Control Engineering",R.drawable.background_ice, date1));
+        department.add(new Department("Master of Business Administration",R.drawable.background_mba,date2));
+        department.add(new Department("Master of Computer Application",R.drawable.background_mca,date2));
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
