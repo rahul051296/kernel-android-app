@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_public_white_24dp"
-        android:title="@string/action_settings"
+        android:title="Open Website"
         app:showAsAction="always" />
 </menu>
